@@ -9,8 +9,16 @@
     path: "{{ app_location }}"
     state: directory
 
-- name: download and extract code
-  ansible.builtin.unarchive:
-    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+# - name: download and extract code
+#   ansible.builtin.unarchive:
+#     src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+#     dest: "{{ app_location }}"
+#     remote_src: yes
+
+- name: Clone the repository
+  ansible.builtin.git:
+    repo: "https://github.com/ullagallu123/expense-{{ component }}.git"
     dest: "{{ app_location }}"
-    remote_src: yes
+    
+
+
