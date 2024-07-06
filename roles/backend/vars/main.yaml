@@ -1,0 +1,6 @@
+login_user: root
+login_host: expense.db.test.ullagallu.cloud
+login_password: ExpenseApp1
+DB_HOST: expense.db.test.ullagallu.cloud
+app_location: /app
+component: backend
